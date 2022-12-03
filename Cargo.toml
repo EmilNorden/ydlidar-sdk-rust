@@ -7,4 +7,3 @@ edition = "2021"
 
 [dependencies]
 ydlidar-sdk-sys = { git = "https://github.com/EmilNorden/ydlidar-sdk-ffi-rust"}
-thiserror = "1.0.37"
