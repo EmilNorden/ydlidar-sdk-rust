@@ -199,6 +199,7 @@ impl LaserScan {
     pub fn points(&self) -> &Vec<LaserPoint> { &self.points }
 }
 
+#[derive(Copy, Clone)]
 pub struct LaserPoint {
     angle: f32,
     range: f32,
