@@ -1,0 +1,10 @@
+[package]
+name = "ydlidar-sdk"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ydlidar-sdk-sys = { git = "https://github.com/EmilNorden/ydlidar-sdk-ffi-rust"}
+thiserror = "1.0.37"
