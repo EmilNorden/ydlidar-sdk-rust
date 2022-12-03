@@ -2,7 +2,7 @@ use std::ffi::{c_void, CStr, CString};
 use ydlidar_sdk_sys::*;
 
 #[derive(Debug)]
-struct LidarError {
+pub struct LidarError {
     pub description: String,
 }
 
@@ -14,7 +14,7 @@ impl LidarError {
     }
 }
 
-struct Ydlidar {
+pub struct Ydlidar {
     lidar: *mut YDLidar,
     /*
         When it comes to string properties, the SDK will simply store the pointer passed to it.
@@ -182,7 +182,7 @@ impl Drop for Ydlidar {
     }
 }
 
-struct LaserScan {
+pub struct LaserScan {
     stamp: u64,
     points: Vec<LaserPoint>,
 }
@@ -199,7 +199,7 @@ impl LaserScan {
     pub fn points(&self) -> &Vec<LaserPoint> { &self.points }
 }
 
-struct LaserPoint {
+pub struct LaserPoint {
     angle: f32,
     range: f32,
     intensity: f32,
@@ -220,7 +220,7 @@ impl LaserPoint {
 }
 
 
-enum LidarProperty<'a> {
+pub enum LidarProperty<'a> {
     SerialPort(&'a str),
     IgnoreArray(&'a str),
     SerialBaudRate(i32),
